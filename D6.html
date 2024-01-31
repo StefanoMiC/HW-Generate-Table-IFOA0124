@@ -232,25 +232,20 @@
 
       const hElements = ["immagine", "nome prodotto", "quantità", "prezzo"]
 
-      const th1 = document.createElement("th")
-      th1.innerText = "immagine"
-      const th2 = document.createElement("th")
-      th2.innerText = "nome prodotto"
-
-      for (let i = 0; i < hElements.length; i++) {
-        const th = document.createElement("th")
-        const elementStr = hElements[i]
-
-        tr1.appendChild(th)
-      }
-
-      // generazione dinamica degli elementi di intestazione
-      // hElements.forEach(elementStr => {
+      // for (let i = 0; i < hElements.length; i++) {
       //   const th = document.createElement("th")
-      //   th.innerText = elementStr
+      //   const elementStr = hElements[i]
 
       //   tr1.appendChild(th)
-      // })
+      // }
+
+      // generazione dinamica degli elementi di intestazione
+      hElements.forEach(elementStr => {
+        const th = document.createElement("th")
+        th.innerText = elementStr
+
+        tr1.appendChild(th)
+      })
 
       const tBody = document.createElement("tbody")
 
@@ -267,7 +262,6 @@
         1,
         1500
       )
-
     }
 
     generateTable()
